@@ -1,21 +1,66 @@
 {
     "_type": "export",
     "__export_format": 4,
-    "__export_date": "2022-05-28T19:04:55.337Z",
-    "__export_source": "insomnia.desktop.app:v2022.3.0",
+    "__export_date": "2022-08-08T03:29:22.813Z",
+    "__export_source": "insomnia.desktop.app:v2022.5.0",
     "resources": [
+        {
+            "_id": "req_62268419be2049b097df1c7a9c84cc17",
+            "parentId": "fld_bbe5cfedb9204c42a0f639813bc140c2",
+            "modified": 1659834583281,
+            "created": 1659834116765,
+            "url": " https://marvel-qa-cademy.herokuapp.com/back2thepast/{{ _.id }}",
+            "name": "Back To The Past",
+            "description": "",
+            "method": "DELETE",
+            "body": {},
+            "parameters": [],
+            "headers": [],
+            "authentication": {},
+            "metaSortKey": -1659834116765,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "fld_bbe5cfedb9204c42a0f639813bc140c2",
+            "parentId": "wrk_82473a52167b448c94c16b115b33d4df",
+            "modified": 1659834111573,
+            "created": 1659834111573,
+            "name": "Helpers",
+            "description": "",
+            "environment": {},
+            "environmentPropertyOrder": null,
+            "metaSortKey": -1659834111573,
+            "_type": "request_group"
+        },
+        {
+            "_id": "wrk_82473a52167b448c94c16b115b33d4df",
+            "parentId": null,
+            "modified": 1653763967940,
+            "created": 1653763967940,
+            "name": "VDT #1 - Marvel API",
+            "description": "",
+            "scope": "collection",
+            "_type": "workspace"
+        },
         {
             "_id": "req_ae7bf1e0ffe44562bd4fc863c8388036",
             "parentId": "fld_44d896408da8432f99b15c2812fd843f",
-            "modified": 1653764048217,
+            "modified": 1659882610814,
             "created": 1653763967968,
-            "url": " https://localhost:3333/users",
+            "url": "https://marvel-qa-cademy.herokuapp.com/users",
             "name": "Create user",
             "description": "",
             "method": "POST",
             "body": {
                 "mimeType": "application/json",
-                "text": "{\n\t\"email\": \"papito@qacademy.io\",\n\t\"password\": \"qa-cademy\"\n}"
+                "text": "{\n\t\"email\": \"georgemathias@qacademy.io\",\n\t\"password\": \"{{ _.password }}\"\n}"
             },
             "parameters": [],
             "headers": [
@@ -39,37 +84,27 @@
         {
             "_id": "fld_44d896408da8432f99b15c2812fd843f",
             "parentId": "wrk_82473a52167b448c94c16b115b33d4df",
-            "modified": 1653763967967,
+            "modified": 1659831939059,
             "created": 1653763967967,
             "name": "Users",
             "description": "",
             "environment": {},
             "environmentPropertyOrder": null,
-            "metaSortKey": -1650580325318,
+            "metaSortKey": -1650580325418,
             "_type": "request_group"
-        },
-        {
-            "_id": "wrk_82473a52167b448c94c16b115b33d4df",
-            "parentId": null,
-            "modified": 1653763967940,
-            "created": 1653763967940,
-            "name": "VDT #1 - Marvel API",
-            "description": "",
-            "scope": "collection",
-            "_type": "workspace"
         },
         {
             "_id": "req_43aededf72314be1a94abf023f56925e",
             "parentId": "fld_44d896408da8432f99b15c2812fd843f",
-            "modified": 1653764047219,
+            "modified": 1659918026473,
             "created": 1653763967970,
-            "url": " https://localhost:3333/sessions",
+            "url": "https://marvel-qa-cademy.herokuapp.com/sessions",
             "name": "User session",
             "description": "",
             "method": "POST",
             "body": {
                 "mimeType": "application/json",
-                "text": "{\n\t\"email\": \"papito@qacademy.io\",\n\t\"password\": \"qa-cademy\"\n}"
+                "text": "{\n\t\"email\": \"georgemathias@qacademy.io\",\n\t\"password\": \"qa-cademy\"\n}"
             },
             "parameters": [],
             "headers": [
@@ -87,6 +122,215 @@
             ],
             "authentication": {},
             "metaSortKey": -1650578520864,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_7ac2bf3d109e4e08a3dafcc3c0d92860",
+            "parentId": "fld_d38d492f397743d088c0e497778c0990",
+            "modified": 1659883204230,
+            "created": 1659830858755,
+            "url": " https://marvel-qa-cademy.herokuapp.com/characters",
+            "name": "Save New Character",
+            "description": "",
+            "method": "POST",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n\t\"name\": \"Peter Parker\",\n\t\"alias\": \"Homem Aranha\",\n\t\"team\": [\"novos vingadores\"],\n\t\"active\": true\n}"
+            },
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json",
+                    "id": "pair_3c609e836fa94f40a6cb44f20e9d152e"
+                },
+                {
+                    "id": "pair_8096c34ca6324566b980e82698101c0a",
+                    "name": "Authorization",
+                    "value": "{{ _.token }}",
+                    "description": ""
+                }
+            ],
+            "authentication": {},
+            "metaSortKey": -1659830858755,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "fld_d38d492f397743d088c0e497778c0990",
+            "parentId": "wrk_82473a52167b448c94c16b115b33d4df",
+            "modified": 1659831934282,
+            "created": 1659830846437,
+            "name": "Character",
+            "description": "",
+            "environment": {},
+            "environmentPropertyOrder": null,
+            "metaSortKey": -1650580325368,
+            "_type": "request_group"
+        },
+        {
+            "_id": "req_275e7fe4601245d89236ce69f1c69e65",
+            "parentId": "fld_d38d492f397743d088c0e497778c0990",
+            "modified": 1659929328081,
+            "created": 1659831697591,
+            "url": " https://marvel-qa-cademy.herokuapp.com/characters",
+            "name": "Get Characters",
+            "description": "",
+            "method": "GET",
+            "body": {
+                "mimeType": "application/json",
+                "text": ""
+            },
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json",
+                    "id": "pair_3c609e836fa94f40a6cb44f20e9d152e"
+                },
+                {
+                    "id": "pair_8096c34ca6324566b980e82698101c0a",
+                    "name": "Authorization",
+                    "value": "{{ _.token }}",
+                    "description": ""
+                }
+            ],
+            "authentication": {},
+            "metaSortKey": -1655204689822,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_5467e9ac143443e58dc2a3e4a4be1a03",
+            "parentId": "fld_d38d492f397743d088c0e497778c0990",
+            "modified": 1659918085111,
+            "created": 1659882793929,
+            "url": " https://marvel-qa-cademy.herokuapp.com/characters",
+            "name": "Get Character By Name",
+            "description": "",
+            "method": "GET",
+            "body": {
+                "mimeType": "application/json",
+                "text": ""
+            },
+            "parameters": [
+                {
+                    "id": "pair_6b2fe614f0a64da6b2eea2d95cb9cfec",
+                    "name": "name",
+                    "value": "Logan",
+                    "description": ""
+                }
+            ],
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json",
+                    "id": "pair_3c609e836fa94f40a6cb44f20e9d152e"
+                },
+                {
+                    "id": "pair_8096c34ca6324566b980e82698101c0a",
+                    "name": "Authorization",
+                    "value": "{{ _.token }}",
+                    "description": ""
+                }
+            ],
+            "authentication": {},
+            "metaSortKey": -1652891605355.5,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_6d76fdc7e78f44c99a32722ada2a19e2",
+            "parentId": "fld_d38d492f397743d088c0e497778c0990",
+            "modified": 1659921251169,
+            "created": 1659882889499,
+            "url": " https://marvel-qa-cademy.herokuapp.com/characters/{{ _.id_tony }}",
+            "name": "Get Character By Id",
+            "description": "",
+            "method": "GET",
+            "body": {
+                "mimeType": "application/json",
+                "text": ""
+            },
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json",
+                    "id": "pair_3c609e836fa94f40a6cb44f20e9d152e"
+                },
+                {
+                    "id": "pair_8096c34ca6324566b980e82698101c0a",
+                    "name": "Authorization",
+                    "value": "{{ _.token }}",
+                    "description": ""
+                }
+            ],
+            "authentication": {},
+            "metaSortKey": -1651735063122.25,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_d167d3b5c1ce4b78b91693afd8db7cb1",
+            "parentId": "fld_d38d492f397743d088c0e497778c0990",
+            "modified": 1659901963169,
+            "created": 1659893680800,
+            "url": " https://marvel-qa-cademy.herokuapp.com/characters/{{ _.id_wanda }}",
+            "name": "Remove a Character",
+            "description": "",
+            "method": "DELETE",
+            "body": {
+                "mimeType": "application/json",
+                "text": ""
+            },
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json",
+                    "id": "pair_3c609e836fa94f40a6cb44f20e9d152e"
+                },
+                {
+                    "id": "pair_8096c34ca6324566b980e82698101c0a",
+                    "name": "Authorization",
+                    "value": "{{ _.token }}",
+                    "description": ""
+                }
+            ],
+            "authentication": {},
+            "metaSortKey": -1651156792005.625,
             "isPrivate": false,
             "settingStoreCookies": true,
             "settingSendCookies": true,
@@ -127,6 +371,37 @@
             "contents": "",
             "contentType": "yaml",
             "_type": "api_spec"
+        },
+        {
+            "_id": "env_0b92dee692aa4229ae593992f1c711a2",
+            "parentId": "env_8497aa90057c492bb28d50236f822cc7",
+            "modified": 1659929301328,
+            "created": 1659830098646,
+            "name": "QA",
+            "data": {
+                "id": "{% response 'body', 'req_43aededf72314be1a94abf023f56925e', 'b64::JC51c2VyLl9pZA==::46b', 'always', 60 %}",
+                "token": "{% response 'body', 'req_43aededf72314be1a94abf023f56925e', 'b64::JC50b2tlbg==::46b', 'always', 60 %}",
+                "password": "qa-cademy",
+                "id_pietro": "62efcce2dc6e23001604bcff",
+                "id_wanda": "62efcce2dc6e23001604bcfc",
+                "id_peter": "62efceb0dc6e23001604bd1e",
+                "id_tony": "62f06328027d7c0016c3398f"
+            },
+            "dataPropertyOrder": {
+                "&": [
+                    "id",
+                    "token",
+                    "password",
+                    "id_pietro",
+                    "id_wanda",
+                    "id_peter",
+                    "id_tony"
+                ]
+            },
+            "color": "#e77408",
+            "isPrivate": false,
+            "metaSortKey": 1659830098646,
+            "_type": "environment"
         }
     ]
 }
