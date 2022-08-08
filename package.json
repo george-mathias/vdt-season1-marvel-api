@@ -4,8 +4,9 @@
   "description": "<h1 align=\"left\">\r     <img src=\".github/logo-stiker.svg\" width=\"250px\">\r </h1>",
   "main": "index.js",
   "scripts": {
+    "back2thepast": "sh ./back2thepast.sh",
     "open": "npx cypress open",
-    "run": "npx cypress run"
+    "test": "npm run back2thepast && npx cypress run"
   },
   "repository": {
     "type": "git",

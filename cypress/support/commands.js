@@ -30,7 +30,7 @@ Cypress.Commands.add('setToken', () => {
         url: '/sessions',
         headers: { 'Accept-Language': 'en-us' },
         body: {
-            "email": "fernando@qacademy.io",
+            "email": "georgemathias@qacademy.io",
             "password": "qa-cademy"
         }
     }).then((response) => {
@@ -42,7 +42,7 @@ Cypress.Commands.add('setToken', () => {
 Cypress.Commands.add('back2ThePast', () => {
     cy.api({
         method: "DELETE",
-        url: `/back2thepast/629279d295a93d00168e794b`
+        url: `/back2thepast/62efcc39dc6e23001604bcf1`
     }).then((response) => {
         expect(response.status).to.eql(200)
     })
@@ -58,5 +58,61 @@ Cypress.Commands.add('postCharacter', (payload) => {
         },
         body: payload,
         failOnStatusCode: false
+    })
+})
+
+Cypress.Commands.add('getCharacters', () => {
+    cy.api({
+        method: "GET",
+        url: "/characters",
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': Cypress.env('token')
+        },
+        failOnStatusCode: false
+    })
+})
+
+Cypress.Commands.add('getCharacterById', (caracterId) => {
+    cy.api({
+        method: "GET",
+        url: `/characters/${caracterId}`,
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': Cypress.env('token')
+        },
+        failOnStatusCode: false
+    })
+})
+
+Cypress.Commands.add('deleteCharacterById', (caracterId) => {
+    cy.api({
+        method: "DELETE",
+        url: `/characters/${caracterId}`,
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': Cypress.env('token')
+        },
+        failOnStatusCode: false
+    })
+})
+
+Cypress.Commands.add('searchCharacterByName', (characterName) => {
+    cy.api({
+        method: "GET",
+        url: '/characters',
+        qs: { name: characterName },
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': Cypress.env('token')
+        },
+        failOnStatusCode: false
+    })
+})
+
+Cypress.Commands.add('populateCharacters', (characters) => {
+    characters.forEach((character) => {
+        cy.postCharacter(character)
+
     })
 })
